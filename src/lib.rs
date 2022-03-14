@@ -54,7 +54,7 @@ pub mod progress_style {
 
     pub fn bar() -> ProgressStyle {
         ProgressStyle::default_bar().template(
-            "{prefix:>13.cyan.bold} {wide_msg}\n{bytes_per_sec:>13} [{wide_bar}] {bytes/total_bytes}",
+            "{prefix:>13.cyan.bold} {wide_msg}\n{bytes_per_sec:>13} {bytes:>9}/{total_bytes:>9} [{wide_bar}]",
         ).progress_chars("=> ")
     }
 }
