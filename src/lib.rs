@@ -300,9 +300,10 @@ impl Worker {
         let file = File::create(&output_path).map_err(Error::CreateFile)?;
 
         if let Some(content_length) = content_length {
-            self.progress_bar.set_length(content_length);
             self.progress_bar.set_style(progress_style::bar());
+            self.progress_bar.set_length(content_length);
 
+            // TODO: Fix bug where we seem to download more than what we need
             Self::save_to_disk(response, self.progress_bar.wrap_write(file)).await?;
 
             self.reset_progress_bar();
