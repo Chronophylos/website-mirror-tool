@@ -51,7 +51,7 @@ fn main() {
         .targets(args.targets)
         .build();
 
-    run_worker_pool(settings, 4);
+    run_worker_pool(settings, args.threads);
 }
 
 fn run_worker_pool(settings: Settings, threads: usize) {
