@@ -30,8 +30,8 @@ struct Args {
     output: PathBuf,
 
     /// Show progress
-    #[clap(short, long)]
-    progress: bool,
+    // #[clap(short, long)]
+    // progress: bool,
 
     /// How many threads to use
     #[clap(short, long, default_value_t = num_cpus::get())]
